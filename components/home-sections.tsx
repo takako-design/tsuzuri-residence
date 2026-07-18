@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { ArrowRight, CalendarDays, HeartPulse, MessageCircle, Utensils } from 'lucide-react'
+import { AppDemo } from './app-demo'
 
 const ButtonLink = ({ href, children, light = false, outline = false }: { href: string; children: React.ReactNode; light?: boolean; outline?: boolean }) => (
   <a href={href} className={`button ${light ? 'button--light' : ''} ${outline ? 'button--outline' : ''}`}>{children}<ArrowRight aria-hidden="true" /></a>
@@ -68,22 +69,28 @@ export function Dining() {
 }
 
 export function Medical() {
-  const items = [['24時間の看護体制','看護職員が24時間館内に常駐する想定です。夜間の体調変化や健康相談にも対応します。'],['協力医療機関との連携','医師常駐ではありません。定期往診と、必要時の受診・緊急連携を行います。'],['服薬・通院・入退院支援','お薬の確認、受診予定の調整、通院時の支援、入退院時の情報連携を行います。'],['リハビリと健康づくり','状態や希望に合わせ、無理のない運動と健康相談を日常に取り入れます。']]
-  return <section id="medical" className="section medical page-shell"><div className="medical__heading"><Label>MEDICAL &amp; WELLNESS</Label><h2>暮らしのそばに、<br />必要な安心を。</h2><p>看護、介護、医療、栄養、リハビリの専門職が連携し、日々の生活を支えます。</p></div><div className="medical__image visual"><Image src="/images/wellness-room.png" alt="木と自然光に包まれた健康相談室" fill sizes="(min-width: 768px) 46vw, 100vw" /></div><div className="medical-cards">{items.map(([t,d],i) => <article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div><div className="medical__foot"><p><strong>暮らしを支える、多職種チーム。</strong><br />コンシェルジュ・介護職・看護職・管理栄養士・シェフ・リハビリ担当・生活相談員・協力医療機関</p><small>医療・介護サービスの内容は、健康状態、契約内容、協力医療機関の診療方針等によって異なります。</small><ButtonLink href="#contact">医療・看護について相談する</ButtonLink></div></section>
-}
-
-function AppMockup() {
-  return <div className="device" data-layer="app"><div className="device__screen"><p className="app-date">7月18日 土曜日</p><h3>今夜のお食事を<br />お選びください</h3><div className="meal-choice"><Image src="/images/japanese-dining.png" alt="季節の和御膳" width={460} height={345} /><div><strong>季節の和御膳</strong><span>おすすめ</span></div></div><button type="button" disabled>この食事を選ぶ（デモ）</button></div></div>
+  const items = [
+    ['24時間の看護体制','看護職員が24時間館内に常駐する想定です。夜間の体調変化や健康相談にも対応します。'],
+    ['協力医療機関との連携','医師は館内に常駐しません。協力医療機関による定期往診と、緊急時の連携を行います。'],
+    ['服薬・通院・入退院支援','お薬の確認、受診予定の調整、通院時の支援、入退院時の情報連携を行います。'],
+    ['リハビリと健康づくり','状態や希望に合わせ、無理のない運動と健康相談を日常に取り入れます。'],
+  ]
+  return <section id="medical" className="section medical page-shell">
+    <div className="medical__heading"><Label>MEDICAL &amp; WELLNESS</Label><h2>暮らしのそばに、<br />必要な安心を。</h2><p>看護職員が24時間館内に常駐する体制と、協力医療機関による定期往診・緊急時連携を軸に、多職種が日々の暮らしを支えます。</p></div>
+    <div className="medical__image visual"><Image src="/images/wellness-room.png" alt="木と自然光に包まれた健康相談室" fill sizes="(min-width: 1051px) 58vw, (min-width: 768px) 100vw, 100vw" /></div>
+    <div className="medical-cards">{items.map(([t,d],i) => <article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
+    <div className="medical__foot"><p><strong>暮らしを支える、多職種チーム。</strong><br />コンシェルジュ・介護職・看護職・管理栄養士・シェフ・リハビリ担当・生活相談員・協力医療機関</p><small>医療・介護サービスの内容は、健康状態、契約内容、協力医療機関の診療方針等によって異なります。</small><ButtonLink href="#contact">医療・看護について相談する</ButtonLink></div>
+  </section>
 }
 
 export function DigitalConcierge() {
-  const features = [[CalendarDays,'今日の予定が分かる'],[Utensils,'食事や体験を自分で選べる'],[HeartPulse,'健康・お薬を確認できる'],[MessageCircle,'家族・コンシェルジュとつながれる']] as const
-  return <section id="app" className="section app-section"><div className="page-shell app-grid"><div className="device-stage"><div className="device-secondary"><p>おはようございます</p><strong>今日の予定</strong><span>10:30 ガーデン散歩</span><span>14:00 音楽の時間</span></div><AppMockup /></div><div className="app-copy"><Label>DIGITAL CONCIERGE</Label><h2>今日を分かりやすく。<br />選ぶことを、いつまでも自分らしく。</h2><p>今日の予定、食事、健康、お薬、家族からのメッセージを、見やすい画面にまとめます。大きな文字とボタンで、必要なときはスタッフが操作をお手伝いします。</p><div className="app-features">{features.map(([Icon,text]) => <div key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div><ButtonLink href="#contact">アプリについて相談する</ButtonLink><small>本アプリは医療診断や治療を行うものではありません。</small></div></div></section>
+  const features = [[CalendarDays,'今日の予定'],[Utensils,'食事や体験の選択'],[HeartPulse,'健康・お薬の確認'],[MessageCircle,'家族・コンシェルジュとの連絡']] as const
+  return <section id="app" className="section app-section"><div className="page-shell app-grid"><AppDemo /><div className="app-copy"><Label>DIGITAL CONCIERGE</Label><h2>今日を分かりやすく。<br />選ぶことを、いつまでも自分らしく。</h2><p>今日の予定、食事、健康、お薬、家族からのメッセージを、見やすい画面にまとめます。大きな文字とボタンで、必要なときはスタッフが操作をお手伝いします。</p><div className="app-features">{features.map(([Icon,text]) => <div key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div><ButtonLink href="#contact">アプリについて相談する</ButtonLink><small>本アプリは医療診断や治療を行うものではありません。</small></div></div></section>
 }
 
 export function Families() {
   const rows = [['面会・会食を予約しやすく','家族との面会や食事の予定を、分かりやすく相談・予約できます。'],['本人の同意に基づく情報共有','生活や健康の情報は、ご本人が許可した範囲で共有します。'],['緊急時の連絡を明確に','どのような場合に、誰からお知らせするかを入居前に確認します。']]
-  return <section className="families"><div className="families__image visual"><Image src="/images/family-table.png" alt="庭を眺めながらお茶を囲む家族の後ろ姿" fill sizes="(min-width: 768px) 58vw, 100vw" /></div><div className="families__copy"><Label>FOR FAMILIES</Label><h2>離れている時間にも、<br />心地よいつながりを。</h2><p>ご家族が安心できることと、ご本人のプライバシーが守られること。その両方を大切にします。</p><div className="family-lines">{rows.map(([t,d]) => <div key={t}><h3>{t}</h3><p>{d}</p></div>)}</div><ButtonLink href="#contact">ご家族から相談する</ButtonLink></div></section>
+  return <section id="families" className="families"><div className="families__image visual"><Image src="/images/family-table.png" alt="庭を眺めながらお茶を囲む家族の後ろ姿" fill sizes="(min-width: 1051px) 64vw, (min-width: 768px) 50vw, 100vw" /></div><div className="families__copy"><Label>FOR FAMILIES</Label><h2>離れている時間にも、<br />心地よいつながりを。</h2><p>ご家族が安心できることと、ご本人の意思とプライバシーが守られること。情報共有はご本人の同意に基づき、その両方を大切にします。</p><div className="family-lines">{rows.map(([t,d]) => <div key={t}><h3>{t}</h3><p>{d}</p></div>)}</div><ButtonLink href="#contact">ご家族から相談する</ButtonLink></div></section>
 }
 
 const overview = [['施設名','TSUZURI RESIDENCE 神戸御影'],['施設種別','介護付き有料老人ホーム'],['所在地','兵庫県神戸市東灘区御影［架空所在地］'],['居室数','全48室・全室個室［仮設定］'],['入居対象','原則65歳以上。自立・要支援・要介護'],['看護体制','看護職員24時間常駐［仮設定］'],['医療','協力医療機関による定期往診・緊急連携'],['食事','1日3食。選択メニュー、個別調整']]
