@@ -72,12 +72,12 @@ export function Medical() {
 }
 
 function AppMockup() {
-  return <div className="device" data-layer="app"><div className="device__screen"><p className="app-date">7月18日 土曜日</p><h3>今夜のお食事を<br />お選びください</h3><div className="meal-choice"><Image src="/images/japanese-dining.png" alt="季節の和御膳" width={460} height={345} /><div><strong>季節の和御膳</strong><span>おすすめ</span></div></div><button type="button">この食事を選ぶ</button></div></div>
+  return <div className="device" data-layer="app"><div className="device__screen"><p className="app-date">7月18日 土曜日</p><h3>今夜のお食事を<br />お選びください</h3><div className="meal-choice"><Image src="/images/japanese-dining.png" alt="季節の和御膳" width={460} height={345} /><div><strong>季節の和御膳</strong><span>おすすめ</span></div></div><button type="button" disabled>この食事を選ぶ（デモ）</button></div></div>
 }
 
 export function DigitalConcierge() {
   const features = [[CalendarDays,'今日の予定が分かる'],[Utensils,'食事や体験を自分で選べる'],[HeartPulse,'健康・お薬を確認できる'],[MessageCircle,'家族・コンシェルジュとつながれる']] as const
-  return <section id="app" className="section app-section"><div className="page-shell app-grid"><div className="device-stage"><div className="device-secondary"><p>おはようございます</p><strong>今日の予定</strong><span>10:30 ガーデン散歩</span><span>14:00 音楽の時間</span></div><AppMockup /></div><div className="app-copy"><Label>DIGITAL CONCIERGE</Label><h2>今日を分かりやすく。<br />選ぶことを、いつまでも自分らしく。</h2><p>今日の予定、食事、健康、お薬、家族からのメッセージを、見やすい画面にまとめます。大きな文字とボタンで、必要なときはスタッフが操作をお手伝いします。</p><div className="app-features">{features.map(([Icon,text]) => <div key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div><ButtonLink href="#app">アプリデモを操作する</ButtonLink><small>本アプリは医療診断や治療を行うものではありません。</small></div></div></section>
+  return <section id="app" className="section app-section"><div className="page-shell app-grid"><div className="device-stage"><div className="device-secondary"><p>おはようございます</p><strong>今日の予定</strong><span>10:30 ガーデン散歩</span><span>14:00 音楽の時間</span></div><AppMockup /></div><div className="app-copy"><Label>DIGITAL CONCIERGE</Label><h2>今日を分かりやすく。<br />選ぶことを、いつまでも自分らしく。</h2><p>今日の予定、食事、健康、お薬、家族からのメッセージを、見やすい画面にまとめます。大きな文字とボタンで、必要なときはスタッフが操作をお手伝いします。</p><div className="app-features">{features.map(([Icon,text]) => <div key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div><ButtonLink href="#contact">アプリについて相談する</ButtonLink><small>本アプリは医療診断や治療を行うものではありません。</small></div></div></section>
 }
 
 export function Families() {
@@ -98,7 +98,7 @@ export function FinalCta() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="page-shell footer__grid"><div><p className="footer__brand">TSUZURI RESIDENCE<small>KOBE MIKAGE</small></p><p>私らしい毎日を、安心とともに。</p></div><nav aria-label="フッターナビゲーション">{[['暮らし','#residence'],['ダイニング','#dining'],['医療・看護','#medical'],['専用アプリ','#app'],['入居案内','#information'],['見学予約','#contact']].map(([t,h])=><a key={t} href={h}>{t}</a>)}</nav><div className="footer__legal"><a href="#top">プライバシーポリシー</a><a href="#top">サイト利用規約</a><a href="#top">アクセシビリティ方針</a></div></div><div className="page-shell footer__bottom"><p>本サイトは、田中貴子によるポートフォリオ掲載用の架空プロジェクトです。実在する施設、法人、サービス、医療機関とは関係ありません。</p><p>© 2026 TSUZURI RESIDENCE</p></div></footer>
+  return <footer className="footer"><div className="page-shell footer__grid"><div><p className="footer__brand">TSUZURI RESIDENCE<small>KOBE MIKAGE</small></p><p>私らしい毎日を、安心とともに。</p></div><nav aria-label="フッターナビゲーション">{[['暮らし','#residence'],['ダイニング','#dining'],['医療・看護','#medical'],['専用アプリ','#app'],['入居案内','#information'],['見学予約','#contact']].map(([t,h])=><a key={t} href={h}>{t}</a>)}</nav></div><div className="page-shell footer__bottom"><p>本サイトは、田中貴子によるポートフォリオ掲載用の架空プロジェクトです。実在する施設、法人、サービス、医療機関とは関係ありません。</p><p>© 2026 TSUZURI RESIDENCE</p></div></footer>
 }
 
-export function MobileFixedCta() { return <div className="mobile-fixed"><a href="mailto:info@example.com">資料請求</a><a href="#contact">見学予約</a></div> }
+export function MobileFixedCta() { return <nav className="mobile-fixed" aria-label="お問い合わせ"><a href="mailto:info@example.com">資料請求</a><a href="#contact">見学予約</a></nav> }

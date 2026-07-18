@@ -3,8 +3,9 @@ import { DigitalConcierge, Dining, Families, FinalCta, Footer, Hero, Information
 
 export default function Page() {
   return <>
+    <a className="skip-link" href="#main-content">本文へ移動</a>
     <SiteHeader />
-    <main>
+    <main id="main-content">
       <Hero />
       <Philosophy />
       <Residence />
