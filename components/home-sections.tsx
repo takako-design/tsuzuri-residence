@@ -13,7 +13,7 @@ export function Hero() {
       <Image src="/images/hero-lounge.png" alt="庭へ視線が抜ける、自然光に満ちたラウンジ" fill priority sizes="100vw" className="hero__image" />
       <div className="hero__overlay" />
       <div className="hero__content page-shell">
-        <p className="hero__eyebrow">ARTFUL WELLNESS RESIDENCE<br /><span>介護付き有料老人ホーム</span></p>
+        <p className="hero__eyebrow"><span className="hero__eyebrow-en">ARTFUL WELLNESS RESIDENCE</span><span>介護付き有料老人ホーム</span></p>
         <h1>これからの人生を、<br />もっと自分らしく、美しく。</h1>
         <p className="hero__lead">上質な住環境と、医療・看護・介護の安心。<br />一人ひとりの意思と、毎日の楽しみを大切にする<br className="desktop-only" />シニアレジデンスです。</p>
         <div className="button-row"><ButtonLink href="#contact" light>見学を予約する</ButtonLink><ButtonLink href="#contact" light outline>資料を取り寄せる</ButtonLink></div>
@@ -59,8 +59,9 @@ export function Residence() {
 export function Dining() {
   const features = [['選べるメニュー','季節の和御膳、魚料理、肉料理、洋食、軽食から。'],['美しく整える栄養支援','体調に配慮しながら、同じ食卓を楽しめる味わいへ。'],['家族と囲む特別な食卓','記念日には個室や特別メニューをご用意します。']]
   return <section id="dining" className="dark-section section"><div className="page-shell dining-grid">
-    <div className="dining__copy"><Label dark>RESIDENCE DINING</Label><h2>今日の気分で選ぶ、<br />私のための食卓。</h2><p>食事を管理される時間ではなく、選び、味わい、誰かと楽しむ時間へ。和食を中心に、その日の気分や体調に合わせてお選びいただけます。</p><div className="feature-lines">{features.map(([t,d]) => <div key={t}><h3>{t}</h3><p>{d}</p></div>)}</div><p className="app-note">毎日のメニューは、専用タブレットでも写真を見ながら選べます。</p><ButtonLink href="#app" light>食事選択のデモを見る</ButtonLink></div>
+    <div className="dining__copy"><Label dark>RESIDENCE DINING</Label><h2>今日の気分で選ぶ、<br />私のための食卓。</h2><p>食事を管理される時間ではなく、選び、味わい、誰かと楽しむ時間へ。和食を中心に、その日の気分や体調に合わせてお選びいただけます。</p></div>
     <figure className="dining__main"><div className="visual"><Image src="/images/japanese-dining.png" alt="鰆の西京焼きを中心とした季節の和御膳" fill sizes="(min-width: 768px) 58vw, 100vw" /></div><figcaption><i>Today&apos;s selection</i>本日の季節の和御膳</figcaption></figure>
+    <div className="dining__details"><div className="feature-lines">{features.map(([t,d]) => <div key={t}><h3>{t}</h3><p>{d}</p></div>)}</div><p className="app-note">毎日のメニューは、専用タブレットでも写真を見ながら選べます。</p><ButtonLink href="#app" light>食事選択のデモを見る</ButtonLink></div>
     <div className="dining__room visual"><Image src="/images/dining-room.png" alt="庭を望むレジデンスダイニング" fill sizes="(min-width: 768px) 50vw, 100vw" /></div>
     <div className="dining__menu"><p>SEASONAL MENU</p><h3>味わい、彩り、器、香りまで。</h3><ul><li>鰆の西京焼き</li><li>翡翠茄子の含め煮</li><li>季節の炊き込みご飯</li><li>茶碗蒸し・水菓子</li></ul></div>
   </div></section>
