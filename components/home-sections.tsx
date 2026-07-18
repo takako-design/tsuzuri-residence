@@ -95,18 +95,55 @@ export function Families() {
 
 const overview = [['施設名','TSUZURI RESIDENCE 神戸御影'],['施設種別','介護付き有料老人ホーム'],['所在地','兵庫県神戸市東灘区御影［架空所在地］'],['居室数','全48室・全室個室［仮設定］'],['入居対象','原則65歳以上。自立・要支援・要介護'],['看護体制','看護職員24時間常駐［仮設定］'],['医療','協力医療機関による定期往診・緊急連携'],['食事','1日3食。選択メニュー、個別調整']]
 const steps = [['資料請求','施設概要や料金をご確認ください。'],['個別相談','ご希望や現在の暮らしを伺います。'],['施設見学','居室や支援体制をご案内します。'],['体験・面談','ご本人とご家族の希望を確認します。'],['条件確認','必要な支援と対応範囲を確認します。'],['契約','費用とサービスをご説明します。'],['ご入居','新しい暮らしを始めます。']]
-const faqs = [['自立していても入居できますか。','はい。本企画では、自立の方から要支援・要介護の方までを対象とする設定です。'],['介護度が変わっても住み続けられますか。','可能な限り継続して暮らせる設定ですが、必要な支援内容に応じて対応方法を相談します。'],['看護職員は夜間もいますか。','本企画では、看護職員が24時間館内に常駐する設定です。'],['医師は施設内に常駐していますか。','医師常駐の設定ではありません。協力医療機関による定期往診と緊急連携を行います。'],['家具や思い出の品を持ち込めますか。','安全や動線を確認したうえで、自分らしい空間に整えられる設定です。'],['タブレットを使えなくても入居できますか。','はい。アプリの利用を入居条件にはしません。別の方法をご用意します。']]
+const faqs = [['自立していても入居できますか。','はい。本企画では、自立の方から要支援・要介護の方までを対象とする設定です。'],['介護度が変わっても住み続けられますか。','可能な限り継続して暮らせる設定ですが、必要な支援内容に応じて対応方法を相談します。'],['看護職員は夜間もいますか。','本企画では、看護職員が24時間館内に常駐する設定です。'],['医師は施設内に常駐していますか。','医師は施設内に常駐しません。協力医療機関による定期往診と、緊急時の連携を行います。'],['家具や思い出の品を持ち込めますか。','安全や動線を確認したうえで、自分らしい空間に整えられる設定です。'],['タブレットを使えなくても入居できますか。','はい。アプリの利用を入居条件にはしません。別の方法をご用意します。']]
 
 export function Information() {
-  return <section id="information" className="section information page-shell"><Label>RESIDENCE INFORMATION</Label><div className="information__intro"><h2>入居をご検討の方へ。</h2><p>暮らしのご希望、健康状態、ご家族の状況を伺いながら、一人ひとりに合う入居方法をご案内します。ご本人だけ、ご家族だけでのご相談も承ります。</p></div><div className="overview"><h3>施設概要</h3><dl>{overview.map(([dt,dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl></div><div className="pricing"><div><p>入居一時金</p><strong>3,000<small>万円〜</small></strong></div><div><p>月額利用料</p><strong>35<small>万円〜</small></strong></div><p>月額利用料には、居室利用料、管理費、食費を含む想定です。介護保険の自己負担分、医療費等は別途必要です。<br />※上記はポートフォリオ制作のための架空料金です。</p></div><div className="flow"><h3>ご入居までの流れ</h3><ol>{steps.map(([t,d],i) => <li key={t}><span>0{i+1}</span><h4>{t}</h4><p>{d}</p></li>)}</ol></div><div className="access"><div><Label>ACCESS</Label><h3>神戸・御影の、<br />緑と文化が息づく場所。</h3><p>阪急御影駅より送迎車で約5分<br />JR住吉駅より車で約10分<br />来館者用駐車場あり</p><small>※所在地、交通時間、駐車場情報は架空設定です。</small></div><div className="map-placeholder"><span>MIKAGE</span><i /><b>TSUZURI<br />RESIDENCE</b></div></div><div className="faq"><Label>FAQ</Label><h3>よくあるご質問</h3>{faqs.map(([q,a],i) => <details key={q} open={i === 0}><summary><span>{q}</span><b aria-hidden="true">＋</b></summary><p>{a}</p></details>)}</div></section>
+  return <section id="information" className="section information page-shell">
+    <Label>RESIDENCE INFORMATION</Label>
+    <div className="information__intro"><h2>入居をご検討の方へ。</h2><p>暮らしのご希望、健康状態、ご家族の状況を伺いながら、一人ひとりに合う入居方法をご案内します。ご本人だけ、ご家族だけでのご相談も承ります。</p></div>
+
+    <section className="overview" aria-labelledby="overview-title">
+      <div className="overview__heading"><h3 id="overview-title">施設概要</h3><p>掲載内容は、ポートフォリオ制作のために設定した架空の施設概要です。</p></div>
+      <dl>{overview.map(([dt,dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl>
+    </section>
+
+    <section id="pricing" className="pricing" aria-labelledby="pricing-title">
+      <div className="pricing__heading"><p>PRICE GUIDE</p><h3 id="pricing-title">料金の目安</h3><p>ご入居時と毎月の基本費用を、分けてご案内します。</p></div>
+      <div className="pricing__items">
+        <div><p>ご入居時に必要となる費用</p><h4>入居一時金</h4><p className="pricing__amount"><strong>3,000</strong><span>万円〜</span></p></div>
+        <div><p>毎月の暮らしにかかる基本費用</p><h4>月額利用料</h4><p className="pricing__amount"><strong>35</strong><span>万円〜</span></p></div>
+      </div>
+      <div className="pricing__note"><p>月額利用料には、居室利用料、管理費、食費を含む想定です。介護保険の自己負担分、医療費等は別途必要です。</p><strong>※上記はポートフォリオ制作のための架空料金です。</strong></div>
+    </section>
+
+    <section id="flow" className="flow" aria-labelledby="flow-title">
+      <div className="flow__heading"><h3 id="flow-title">ご入居までの流れ</h3><p>資料の確認からご入居まで、7つの段階で丁寧にご案内します。</p></div>
+      <ol>{steps.map(([t,d],i) => <li key={t}><span>0{i+1}</span><div><h4>{t}</h4><p>{d}</p></div></li>)}</ol>
+    </section>
+
+    <section id="access" className="access" aria-labelledby="access-title">
+      <div className="access__copy"><Label dark>ACCESS</Label><h3 id="access-title">神戸・御影の、<br />緑と文化が息づく場所。</h3><ul><li><strong>阪急御影駅</strong><span>送迎車で約5分</span></li><li><strong>JR住吉駅</strong><span>車で約10分</span></li><li><strong>お車でのご来館</strong><span>来館者用駐車場あり</span></li></ul><p className="access__address">兵庫県神戸市東灘区御影［架空所在地］</p><small>※所在地、交通時間、駐車場情報および右記の案内図は、ポートフォリオ用の架空設定です。</small></div>
+      <div className="access-map" aria-hidden="true">
+        <p className="access-map__caption">MIKAGE / FICTIONAL MAP</p>
+        <span className="access-map__green">御影の緑地</span>
+        <i className="access-map__road access-map__road--main" /><i className="access-map__road access-map__road--cross" /><i className="access-map__road access-map__road--local" />
+        <span className="access-map__station access-map__station--hankyu"><i />阪急 御影駅</span>
+        <span className="access-map__station access-map__station--jr"><i />JR 住吉駅</span>
+        <span className="access-map__site"><i /><b>TSUZURI<br />RESIDENCE</b><small>送迎車 約5分</small></span>
+      </div>
+    </section>
+
+    <section id="faq" className="faq" aria-labelledby="faq-title"><Label>FAQ</Label><h3 id="faq-title">よくあるご質問</h3><div className="faq__list">{faqs.map(([q,a],i) => <details key={q}><summary><span className="faq__question"><small>Q{String(i+1).padStart(2,'0')}</small>{q}</span><span className="faq__icon" aria-hidden="true" /></summary><div className="faq__answer"><span aria-hidden="true">A</span><p>{a}</p></div></details>)}</div></section>
+  </section>
 }
 
 export function FinalCta() {
-  return <section id="contact" className="final-cta"><Image src="/images/evening-lounge.png" alt="夕暮れの光に包まれたラウンジと庭" fill sizes="100vw" /><div className="final-cta__overlay"/><div className="final-cta__content"><Label dark>VISIT TSUZURI</Label><h2>新しい暮らしを、<br />まずは見学から。</h2><p>写真だけでは分からない、空間の心地よさ、食事、スタッフの対応をご体感ください。</p><div className="button-row"><ButtonLink href="mailto:visit@example.com" light>見学を予約する</ButtonLink><ButtonLink href="mailto:concierge@example.com" light outline>入居について相談する</ButtonLink></div><div className="contact-links"><a href="mailto:info@example.com">資料を取り寄せる</a><a href="tel:0120000000">0120-000-000 <small>9:00〜18:00／架空番号</small></a></div></div></section>
+  return <section id="contact" className="final-cta"><Image src="/images/evening-lounge.png" alt="夕暮れの光に包まれたラウンジと庭" fill sizes="100vw" /><div className="final-cta__overlay"/><div className="final-cta__content"><Label dark>VISIT TSUZURI</Label><h2>新しい暮らしを、<br />まずは見学から。</h2><p>写真だけでは分からない、空間の心地よさ、食事、スタッフの対応をご体感ください。</p><div className="button-row"><ButtonLink href="mailto:visit@example.com" light>見学を予約する</ButtonLink><ButtonLink href="mailto:concierge@example.com" light outline>入居について相談する</ButtonLink></div><div className="contact-links"><a href="mailto:info@example.com">info@example.com</a><a href="tel:0120000000">0120-000-000 <small>受付時間 9:00〜18:00</small></a></div><p className="contact-disclaimer">※メールアドレスと電話番号はポートフォリオ用の架空設定です。実際の予約・相談は受け付けていません。</p></div></section>
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="page-shell footer__grid"><div><p className="footer__brand">TSUZURI RESIDENCE<small>KOBE MIKAGE</small></p><p>私らしい毎日を、安心とともに。</p></div><nav aria-label="フッターナビゲーション">{[['暮らし','#residence'],['ダイニング','#dining'],['医療・看護','#medical'],['専用アプリ','#app'],['入居案内','#information'],['見学予約','#contact']].map(([t,h])=><a key={t} href={h}>{t}</a>)}</nav></div><div className="page-shell footer__bottom"><p>本サイトは、田中貴子によるポートフォリオ掲載用の架空プロジェクトです。実在する施設、法人、サービス、医療機関とは関係ありません。</p><p>© 2026 TSUZURI RESIDENCE</p></div></footer>
+  const footerNav = [['暮らし','#residence'],['ダイニング','#dining'],['医療・看護','#medical'],['専用アプリ','#app'],['入居案内','#information'],['アクセス','#access'],['見学予約','#contact']]
+  return <footer className="footer"><div className="page-shell footer__grid"><div className="footer__identity"><a className="footer__brand" href="#top">TSUZURI RESIDENCE<small>KOBE MIKAGE</small></a><p>私らしい毎日を、安心とともに。</p><p className="footer__fiction">ポートフォリオ掲載用の架空プロジェクトです。</p></div><nav aria-label="フッターナビゲーション"><p>EXPLORE</p>{footerNav.map(([t,h])=><a key={t} href={h}>{t}</a>)}</nav><nav aria-label="ご案内と法務"><p>INFORMATION</p><a href="/privacy">プライバシーポリシー</a><a href="/terms">利用規約</a><a href="mailto:info@example.com">お問い合わせ（デモ）</a></nav></div><div className="page-shell footer__bottom"><p>本サイトは、田中貴子によるポートフォリオ掲載用の架空プロジェクトです。実在する施設、法人、サービス、医療機関とは関係ありません。</p><p>© 2026 TSUZURI RESIDENCE</p></div></footer>
 }
 
 export function MobileFixedCta() { return <nav className="mobile-fixed" aria-label="お問い合わせ"><a href="mailto:info@example.com">資料請求</a><a href="#contact">見学予約</a></nav> }
