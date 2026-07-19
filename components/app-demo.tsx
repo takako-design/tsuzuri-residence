@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { CheckCircle2, RotateCcw } from 'lucide-react'
 import { useState, type KeyboardEvent } from 'react'
+import japaneseDining from '../public/images/japanese-dining.png'
 
 const runOnEnter = (event: KeyboardEvent<HTMLButtonElement>, action: () => void) => {
   if (event.key !== 'Enter') return
@@ -59,8 +60,8 @@ export function AppDemo() {
               >
                 <span className="app-demo__meal-image">
                   <Image
-                    src="/images/japanese-dining.png"
-                    alt="鰆の西京焼きを中心とした季節の和御膳"
+                    src={japaneseDining}
+                    alt="旬魚の焼き物とお造りを中心とした季節の和御膳"
                     fill
                     sizes="(min-width: 1051px) 36vw, (min-width: 768px) 62vw, calc(100vw - 4rem)"
                   />
@@ -68,7 +69,7 @@ export function AppDemo() {
                 <span className="app-demo__meal-copy">
                   <span>
                     <strong>季節の和御膳</strong>
-                    <small id="app-demo-meal-description">鰆の西京焼きと季節の炊き込みご飯</small>
+                    <small id="app-demo-meal-description">旬魚の焼き物とお造り、季節の小鉢</small>
                   </span>
                   <span className="app-demo__selection" aria-hidden="true">
                     {selected ? <><CheckCircle2 />選択中</> : <><span className="app-demo__selection-long">この食事を選ぶ</span><span className="app-demo__selection-short">選ぶ</span></>}
