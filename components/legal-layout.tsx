@@ -12,8 +12,8 @@ export function LegalLayout({ eyebrow, title, lead, children }: LegalLayoutProps
   return <>
     <a className="skip-link" href="#main-content">本文へ移動</a>
     <header className="legal-header">
-      <Link className="legal-brand" href="/" aria-label="TSUZURI RESIDENCE トップページへ">
-        <span>TSUZURI RESIDENCE</span><small>KOBE MIKAGE</small>
+      <Link className="legal-brand" href="/">
+        <span>TSUZURI RESIDENCE</span><small>KOBE MIKAGE</small><span className="sr-only">トップへ</span>
       </Link>
       <Link className="legal-header__back" href="/">トップページへ戻る</Link>
     </header>

@@ -55,8 +55,8 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${scrolled || open ? 'is-solid' : ''} ${open ? 'is-menu-open' : ''}`}>
       <div className="site-header__inner">
-        <a href="#top" className="brand" aria-label="TSUZURI RESIDENCE 神戸御影 トップへ">
-          <span>TSUZURI RESIDENCE</span><small>KOBE MIKAGE</small>
+        <a href="#top" className="brand">
+          <span>TSUZURI RESIDENCE</span><small>KOBE MIKAGE</small><span className="sr-only">トップへ</span>
         </a>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
