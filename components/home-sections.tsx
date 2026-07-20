@@ -1,7 +1,13 @@
 import Image from 'next/image'
-import { ArrowRight, CalendarDays, HeartPulse, MessageCircle, Utensils } from 'lucide-react'
+import { Armchair, ArrowRight, CalendarDays, HeartPulse, KeyRound, MessageCircle, Utensils } from 'lucide-react'
 import japaneseDining from '../public/images/japanese-dining.png'
+import mediterraneanCourse from '../public/images/mediterranean-course.png'
+import breakfastJapanese from '../public/images/breakfast-japanese.png'
+import diningEvening from '../public/images/dining-evening.png'
+import residenceArtLobby from '../public/images/residence-art-lobby.png'
+import residencePrivateRoom from '../public/images/residence-private-room.png'
 import { AppDemo } from './app-demo'
+
 
 const ButtonLink = ({ href, children, light = false, outline = false }: { href: string; children: React.ReactNode; light?: boolean; outline?: boolean }) => (
   <a href={href} className={`button ${light ? 'button--light' : ''} ${outline ? 'button--outline' : ''}`}>{children}<ArrowRight aria-hidden="true" /></a>
@@ -52,20 +58,58 @@ export function Residence() {
   return <section id="residence" className="section residence page-shell">
     <div className="residence__lead visual"><Image src="/images/hero-lounge.png" alt="庭とつながるガーデンラウンジ" fill sizes="(min-width: 768px) 58vw, 100vw" /></div>
     <div className="residence__copy"><Label>RESIDENCE</Label><h2>私の時間が、<br />心地よく流れる場所。</h2><p>静かな朝を過ごす居室。季節の花が迎えるラウンジ。庭を眺めながら交わす会話。思い出の品や好きな家具を加えながら、自分らしい住まいを整えていただけます。</p><ButtonLink href="#contact">暮らしを見学する</ButtonLink></div>
-    <figure className="residence__room"><div className="visual"><Image src="/images/residence-room.png" alt="思い出の品と家具を配した個室" fill sizes="(min-width: 768px) 32vw, 50vw" /></div><figcaption><i>Private Residence</i>思い出とともに、自分らしく整える居室。</figcaption></figure>
-    <figure className="residence__garden"><div className="visual"><Image src="/images/garden-terrace.png" alt="緑に囲まれた庭とテラス" fill sizes="(min-width: 768px) 42vw, 50vw" /></div><figcaption><i>Garden Lounge</i>ひとりの時間も、人とつながる時間も心地よく。</figcaption></figure>
-    <div className="residence__detail"><p className="detail-mark">花とアートのある日常</p><p>全室個室／私物・家具の持ち込み／庭・テラス／コンシェルジュ</p></div>
+    <figure className="residence__room"><div className="visual"><Image src={residencePrivateRoom} alt="緑を望むバルコニーと上質な家具を備えた明るい個室" fill sizes="(min-width: 1051px) 42vw, (min-width: 768px) 50vw, 100vw" /></div><figcaption><i>Private Residence</i>光と緑を身近に、自分らしく整える居室。</figcaption></figure>
+    <figure className="residence__garden"><div className="visual"><Image src="/images/garden-terrace.png" alt="緑に囲まれた庭とテラス" fill sizes="(min-width: 1051px) 42vw, (min-width: 768px) 55vw, 50vw" /></div><figcaption><i>Garden Lounge</i>ひとりの時間も、人とつながる時間も心地よく。</figcaption></figure>
+    <figure className="residence__art"><div className="visual"><Image src={residenceArtLobby} alt="季節の花とアート、緑の庭が調和する開放的なレジデンスラウンジ" fill sizes="(min-width: 1051px) 100vw, 100vw" /></div><figcaption><i>Art &amp; Seasonal Flowers</i><span>季節の花とアート、庭の緑が、日常に静かな彩りを添えます。</span></figcaption></figure>
+    <div className="residence__detail"><p>全室個室／私物・家具の持ち込み／庭・テラス／コンシェルジュ</p></div>
   </section>
 }
 
 export function Dining() {
-  const features = [['選べるメニュー','季節の和御膳、魚料理、肉料理、洋食、軽食から。'],['美しく整える栄養支援','体調に配慮しながら、同じ食卓を楽しめる味わいへ。'],['家族と囲む特別な食卓','記念日には個室や特別メニューをご用意します。']]
-  return <section id="dining" className="dark-section section"><div className="page-shell dining-grid">
-    <div className="dining__copy"><Label dark>RESIDENCE DINING</Label><h2>今日の気分で選ぶ、<br />私のための食卓。</h2><p>食事を管理される時間ではなく、選び、味わい、誰かと楽しむ時間へ。和食を中心に、その日の気分や体調に合わせてお選びいただけます。</p></div>
-    <figure className="dining__main"><div className="visual"><Image src={japaneseDining} alt="旬魚の焼き物とお造り、季節の小鉢を組み合わせた和御膳" fill sizes="(min-width: 768px) 58vw, 100vw" /></div><figcaption><i>Today&apos;s selection</i>本日の季節の和御膳</figcaption></figure>
-    <div className="dining__details"><div className="feature-lines">{features.map(([t,d]) => <div key={t}><h3>{t}</h3><p>{d}</p></div>)}</div><p className="app-note">毎日のメニューは、専用タブレットでも写真を見ながら選べます。</p><ButtonLink href="#app" light>食事選択のデモを見る</ButtonLink></div>
-    <div className="dining__room visual"><Image src="/images/dining-room.png" alt="庭を望むレジデンスダイニング" fill sizes="(min-width: 768px) 50vw, 100vw" /></div>
-    <div className="dining__menu"><p>SEASONAL MENU</p><h3>味わい、彩り、器、香りまで。</h3><ul><li>旬魚の焼き物</li><li>季節のお造り</li><li>彩り野菜の炊き合わせ</li><li>季節のご飯</li><li>椀物・水菓子</li></ul></div>
+  const features = [
+    ['夕食を主役に','季節の和御膳を中心に、その日の気分や体調に合う一皿を選べます。'],
+    ['もう一つの選択肢','旬魚と季節野菜を生かした、軽やかな地中海風コースもご用意。'],
+    ['朝から整う食卓','焼き魚や小鉢を丁寧に整えた和朝食で、穏やかな一日を始めます。'],
+  ]
+  return <section id="dining" className="dark-section section dining-section"><div className="page-shell dining-grid">
+    <header className="dining__intro">
+      <Label dark>RESIDENCE DINING</Label>
+      <p className="dining__eyebrow">SEASONAL DINNER</p>
+      <h2>今日の気分で選ぶ、<br />私のための食卓。</h2>
+      <p className="dining__lead">一日の中心となる夕食は、旬の素材を丁寧に仕立てた季節の和御膳から。器の美しさ、香り、庭の景色までを含め、心ほどける食卓の時間を整えます。</p>
+    </header>
+
+    <figure className="dining__main">
+      <div className="visual"><Image src={japaneseDining} alt="旬魚の焼き物とお造り、季節の小鉢を組み合わせた和御膳" fill sizes="(min-width: 1051px) 58vw, (min-width: 768px) 62vw, 100vw" /></div>
+      <figcaption><i>Today&apos;s Selection</i><span><strong>本日の季節の和御膳</strong>旬を少しずつ味わう、TSUZURIの夕食。</span></figcaption>
+    </figure>
+
+    <div className="dining__features" aria-label="食事サービスの特徴">
+      {features.map(([title, description], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div></article>)}
+    </div>
+
+    <figure className="dining__room">
+      <div className="visual"><Image src={diningEvening} alt="ライトアップされた日本庭園を望む、木と石を基調とした夕暮れのレジデンスダイニング" fill sizes="(min-width: 1051px) 66vw, (min-width: 768px) 100vw, 100vw" /></div>
+      <figcaption><i>Garden Dining</i><span>庭の静けさと柔らかな灯りに包まれる、夕べのダイニング。</span></figcaption>
+    </figure>
+
+    <aside className="dining__dinner-copy">
+      <p className="dining__eyebrow">DINNER AT TSUZURI</p>
+      <h3>選べることが、<br />毎日の豊かさになる。</h3>
+      <p>和御膳を軸に、気分を変えたい日には地中海風コースを。食欲や体調に合わせた調整も、同じ食卓の美しさを損なわない形でお届けします。</p>
+      <p className="app-note">毎日のメニューは、専用タブレットでも写真を見ながら選べます。</p>
+      <ButtonLink href="#app" light>食事選択のデモを見る</ButtonLink>
+    </aside>
+
+    <article className="dining__mediterranean">
+      <figure className="dining__mediterranean-image"><Image src={mediterraneanCourse} alt="真鯛のハーブグリル、季節野菜、スープ、デザートを組み合わせた地中海風コース料理" fill sizes="(min-width: 1051px) 58vw, (min-width: 768px) 58vw, 100vw" /></figure>
+      <div className="dining__mediterranean-copy"><p className="section-label section-label--dark">ANOTHER SELECTION</p><h3>地中海の恵みを、<br />軽やかなコースに。</h3><p>旬の魚と季節野菜を中心に、素材の味わいを生かした地中海風のコース料理。その日の気分に合わせてお選びいただけます。</p></div>
+    </article>
+
+    <article className="dining__breakfast">
+      <figure className="dining__breakfast-image"><Image src={breakfastJapanese} alt="焼き魚、季節の小鉢、ご飯、汁物を木漏れ日の食卓に並べた和朝食" fill sizes="(min-width: 1051px) 38vw, (min-width: 768px) 42vw, 100vw" /></figure>
+      <div className="dining__breakfast-copy"><p className="section-label section-label--dark">MORNING TABLE</p><h3>朝の光に似合う、<br />やさしい和の一膳。</h3><p>焼き魚、季節の小鉢、炊きたてのご飯と汁物。身体を穏やかに目覚めさせる味わいを、食欲や体調に合わせて丁寧に整えます。</p></div>
+    </article>
   </div></section>
 }
 
@@ -111,8 +155,18 @@ export function Information() {
     <section id="pricing" className="pricing" aria-labelledby="pricing-title">
       <div className="pricing__heading"><p>PRICE GUIDE</p><h3 id="pricing-title">料金の目安</h3><p>ご入居時と毎月の基本費用を、分けてご案内します。</p></div>
       <div className="pricing__items">
-        <div><p>ご入居時に必要となる費用</p><h4>入居一時金</h4><p className="pricing__amount"><strong>3,000</strong><span>万円〜</span></p></div>
-        <div><p>毎月の暮らしにかかる基本費用</p><h4>月額利用料</h4><p className="pricing__amount"><strong>35</strong><span>万円〜</span></p></div>
+        <article className="pricing__item">
+          <span className="pricing__icon" aria-hidden="true"><KeyRound /></span>
+          <p>ご入居時に必要となる費用</p>
+          <h4>入居一時金</h4>
+          <p className="pricing__amount"><strong>3,000</strong><span>万円〜</span></p>
+        </article>
+        <article className="pricing__item">
+          <span className="pricing__icon" aria-hidden="true"><Armchair /></span>
+          <p>毎月の暮らしにかかる基本費用</p>
+          <h4>月額利用料</h4>
+          <p className="pricing__amount"><strong>35</strong><span>万円〜</span></p>
+        </article>
       </div>
       <div className="pricing__note"><p>月額利用料には、居室利用料、管理費、食費を含む想定です。介護保険の自己負担分、医療費等は別途必要です。</p><strong>※上記はポートフォリオ制作のための架空料金です。</strong></div>
     </section>

@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Noto_Sans_JP, Shippori_Mincho } from 'next/font/google'
 import './globals.css'
+import './visual-revision.css'
 
 const sans = Noto_Sans_JP({ subsets: ['latin'], variable: '--font-noto', display: 'swap', preload: false })
 const serif = Shippori_Mincho({ subsets: ['latin'], weight: ['400','500'], variable: '--font-shippori', display: 'swap', preload: false })
