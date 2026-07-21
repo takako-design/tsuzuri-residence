@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TSUZURI RESIDENCE">
+  <rect width="64" height="64" rx="12" fill="#FCFAF6"/>
+  <path d="M17 21.5 32 11l15 10.5" fill="none" stroke="#A98C59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="34" r="20" fill="none" stroke="#282724" stroke-width="2.5"/>
+  <circle cx="32" cy="34" r="17" fill="none" stroke="#A98C59" stroke-width="1.8"/>
+  <path d="M13.5 39.5c-3-2-4.5-5-4.5-8m4.5 8c-1 2.5-3 4.5-5.5 5.5m42.5-5.5c3-2 4.5-5 4.5-8m-4.5 8c1 2.5 3 4.5 5.5 5.5" fill="none" stroke="#A98C59" stroke-width="2" stroke-linecap="round"/>
+  <text x="32" y="43" text-anchor="middle" fill="#282724" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" letter-spacing="-2">TR</text>
+</svg>

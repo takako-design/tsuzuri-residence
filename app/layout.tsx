@@ -9,8 +9,8 @@ const serif = Shippori_Mincho({ subsets: ['latin'], weight: ['400','500'], varia
 const accent = Cormorant_Garamond({ subsets: ['latin'], weight: ['500','600'], variable: '--font-cormorant', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'TSUZURI RESIDENCE 神戸御影｜私らしい毎日を、安心とともに。',
-  description: '上質な住環境と、医療・看護・介護の安心。一人ひとりの意思を大切にする、神戸・御影のシニアレジデンス。',
+  title: 'TSUZURI RESIDENCE',
+  description: '上質な住環境と、医療・看護・介護の安心。一人ひとりの意思を大切にするシニアレジデンス。',
 }
 
 export const viewport: Viewport = { themeColor: '#FCFAF6', colorScheme: 'light', width: 'device-width', initialScale: 1 }
