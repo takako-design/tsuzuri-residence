@@ -113,11 +113,10 @@
 .dining__intro .section-label { margin-bottom: clamp(1.5rem, 2vw, 2rem); }
 .dining__intro .dining__eyebrow { margin-bottom: .8rem; }
 .dining__intro h2 {
-  max-width: none;
-  font-size: clamp(2.7rem, 3.3vw, 4.05rem);
-  line-height: 1.38;
-  letter-spacing: .02em;
-  white-space: nowrap;
+  max-width: 8.5em;
+  font-size: clamp(3rem, 4.4vw, 4.85rem);
+  line-height: 1.32;
+  letter-spacing: .025em;
 }
 .dining__lead {
   max-width: 31rem;
@@ -285,7 +284,7 @@
   .dining-grid { column-gap: 1.5rem; row-gap: 4rem; }
   .dining__intro { grid-column: 1 / span 5; padding-right: 1.75rem; }
   .dining__main { grid-column: 6 / -1; }
-  .dining__intro h2 { font-size: clamp(2.05rem, 3.3vw, 2.4rem); }
+  .dining__intro h2 { font-size: clamp(2.65rem, 4.7vw, 3.65rem); }
   .dining__features article { padding-inline: 1.25rem; }
   .dining__features article:first-child { padding-left: 0; }
   .dining__features article:last-child { padding-right: 0; }
@@ -312,7 +311,7 @@
     margin: 0;
   }
   .dining__intro { order: 1; padding-right: 0; }
-  .dining__intro h2 { max-width: none; font-size: clamp(2.2rem, 6.4vw, 3.45rem); }
+  .dining__intro h2 { max-width: none; font-size: clamp(2.6rem, 7vw, 3.8rem); }
   .dining__lead { max-width: 43rem; }
   .dining__main { order: 2; }
   .dining__features { order: 3; grid-template-columns: 1fr; }
@@ -351,7 +350,7 @@
 
   .dining-grid { row-gap: 2.5rem; }
   .dining__intro .section-label { margin-bottom: 1.35rem; }
-  .dining__intro h2 { font-size: clamp(1.8rem, 8vw, 2.65rem); line-height: 1.42; }
+  .dining__intro h2 { font-size: clamp(2.35rem, 11vw, 3.25rem); line-height: 1.38; }
   .dining__lead { font-size: 1rem; line-height: 1.9; }
   .dining__main .visual,
   .dining__room .visual,
@@ -584,5 +583,92 @@
 
   .information .pricing__amount {
     gap: .35rem;
+  }
+}
+
+
+/* ============================================================
+   GLOBAL HEADING SIZE ALIGNMENT v14
+   Unify section heading scales across the site.
+   ============================================================ */
+.philosophy__intro h2,
+.residence__copy h2,
+.dining__intro h2,
+.medical__heading h2,
+.app-copy h2,
+.families__copy h2,
+.information__intro h2,
+.final-cta__content h2 {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.42;
+  letter-spacing: .035em;
+}
+
+.overview__heading h3,
+.pricing__heading h3,
+.flow__heading h3,
+.access__copy h3,
+.faq h3,
+.dining__dinner-copy h3,
+.dining__mediterranean-copy h3,
+.dining__breakfast-copy h3 {
+  font-size: clamp(1.95rem, 2.8vw, 2.7rem);
+  line-height: 1.45;
+  letter-spacing: .03em;
+}
+
+.final-cta__content h2 {
+  max-width: 12em;
+}
+
+@media (max-width: 900px) {
+  .philosophy__intro h2,
+  .residence__copy h2,
+  .dining__intro h2,
+  .medical__heading h2,
+  .app-copy h2,
+  .families__copy h2,
+  .information__intro h2,
+  .final-cta__content h2 {
+    font-size: clamp(2.15rem, 7vw, 2.95rem);
+    line-height: 1.46;
+  }
+
+  .overview__heading h3,
+  .pricing__heading h3,
+  .flow__heading h3,
+  .access__copy h3,
+  .faq h3,
+  .dining__dinner-copy h3,
+  .dining__mediterranean-copy h3,
+  .dining__breakfast-copy h3 {
+    font-size: clamp(1.8rem, 5.8vw, 2.3rem);
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .philosophy__intro h2,
+  .residence__copy h2,
+  .dining__intro h2,
+  .medical__heading h2,
+  .app-copy h2,
+  .families__copy h2,
+  .information__intro h2,
+  .final-cta__content h2 {
+    font-size: clamp(2rem, 8.6vw, 2.6rem);
+    line-height: 1.5;
+  }
+
+  .overview__heading h3,
+  .pricing__heading h3,
+  .flow__heading h3,
+  .access__copy h3,
+  .faq h3,
+  .dining__dinner-copy h3,
+  .dining__mediterranean-copy h3,
+  .dining__breakfast-copy h3 {
+    font-size: clamp(1.65rem, 7.2vw, 2rem);
+    line-height: 1.52;
   }
 }
