@@ -22,7 +22,7 @@ export function Hero() {
       <div className="hero__overlay" />
       <div className="hero__content page-shell">
         <p className="hero__eyebrow"><span className="hero__eyebrow-en">ARTFUL WELLNESS RESIDENCE</span><span>介護付き有料老人ホーム</span></p>
-        <h1>これからの人生を、<br />もっと自分らしく、<br />美しく。</h1>
+        <h1><span className="heading-phrase">これからの</span><span className="heading-phrase">人生を、</span><br /><span className="heading-phrase">もっと</span><span className="heading-phrase">自分らしく、</span><br /><span className="heading-phrase">美しく。</span></h1>
         <p className="hero__lead">上質な住環境と、医療・看護・介護の安心。<br />一人ひとりの意思と、毎日の楽しみを大切にする<br className="desktop-only" />シニアレジデンスです。</p>
         <div className="button-row"><ButtonLink href="#contact" light>見学を予約する</ButtonLink><ButtonLink href="#contact" light outline>資料を取り寄せる</ButtonLink></div>
       </div>
@@ -49,7 +49,7 @@ export function Philosophy() {
   ]
   return <section id="philosophy" className="section philosophy page-shell">
     <Label>OUR PHILOSOPHY</Label>
-    <div className="philosophy__intro"><h2>安心のために、<br />自分らしさを諦めない。</h2><div><p>年齢を重ねても、今日をどう過ごすか、何を食べるか、誰と会うかを、自分で選べること。</p><p>TSUZURI RESIDENCEは、その人が大切にしてきた価値観や習慣を尊重し、必要な支援を暮らしのそばに整えます。</p></div></div>
+    <div className="philosophy__intro"><h2>安心のために、<br /><span className="heading-phrase">自分らしさを</span><span className="heading-phrase">諦めない。</span></h2><div><p>年齢を重ねても、今日をどう過ごすか、何を食べるか、誰と会うかを、自分で選べること。</p><p>TSUZURI RESIDENCEは、その人が大切にしてきた価値観や習慣を尊重し、必要な支援を暮らしのそばに整えます。</p></div></div>
     <div className="values">{values.map(([n,t,d]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
   </section>
 }

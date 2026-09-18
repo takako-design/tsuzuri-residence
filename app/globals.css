@@ -334,6 +334,10 @@ h3,p { margin: 0; }
 }
 
 @media (max-width: 767px) {
+  .hero h1,
+  .philosophy__intro h2 { text-wrap: wrap; }
+  .hero h1 .heading-phrase,
+  .philosophy__intro h2 .heading-phrase { display: inline-block; white-space: nowrap; }
   :root { --section-space:clamp(4.5rem,20vw,6rem); --section-compact:clamp(4.5rem,16vw,5.5rem); }
   body { padding-bottom:calc(var(--mobile-cta-height) + env(safe-area-inset-bottom)); }
   .site-header { height:4.5rem; }.site-header__inner { gap:1rem; }.brand { font-size:1rem; }.brand small { font-size:.875rem; }.header-visit { display:none; }.mobile-menu { inset:4.5rem 0 0; height:calc(100dvh - 4.5rem); max-height:calc(100dvh - 4.5rem); }
