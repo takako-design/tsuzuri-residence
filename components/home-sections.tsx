@@ -22,7 +22,7 @@ export function Hero() {
       <div className="hero__overlay" />
       <div className="hero__content page-shell">
         <p className="hero__eyebrow"><span className="hero__eyebrow-en">ARTFUL WELLNESS RESIDENCE</span><span>介護付き有料老人ホーム</span></p>
-        <h1>これからの人生を、<br />もっと自分らしく、美しく。</h1>
+        <h1>これからの人生を、<br />もっと自分らしく、<br />美しく。</h1>
         <p className="hero__lead">上質な住環境と、医療・看護・介護の安心。<br />一人ひとりの意思と、毎日の楽しみを大切にする<br className="desktop-only" />シニアレジデンスです。</p>
         <div className="button-row"><ButtonLink href="#contact" light>見学を予約する</ButtonLink><ButtonLink href="#contact" light outline>資料を取り寄せる</ButtonLink></div>
       </div>
